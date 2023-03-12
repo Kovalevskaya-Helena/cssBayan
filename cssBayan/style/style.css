@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
+body {
+  background-color: bisque;
+}
+
+.container {
+  width: 50vw;
+  margin: 0.625rem auto;
+}
+
+.accordion  * {
+  cursor: pointer;
+}
+
+.title {
+  font-family: 'Comic Neue', cursive;
+  font-size: 2.5rem;
+  padding-bottom: 0.625rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 0.125rem solid gray;
+}
+
+.accordion-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+}
+
+.accordion-box {
+  font-family: 'Comic Neue', cursive;
+  font-size: 2.25rem;
+  padding-bottom: 0.625rem;
+  border-bottom: 0.125rem solid gray;
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.accordion-box:hover i {
+  transform: rotate(45deg);
+}
+
+.accordion-input {
+  display: none;
+}
+
+.accordion-input:checked ~ .accordion-box i {
+  transform: rotate(45deg);
+}
+
+.accordion-input:checked ~ .accordion-box>.accordion-title {
+  color: black;
+}
+
+.accordion .plus {
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.accordion:hover .accordion-title {
+  color: brown;
+  transition: color 0.5s ease-in-out;
+}
+
+.accordion:hover .plus {
+  opacity: 1;
+  transition: all 1s ease-in-out;
+}
+
+.accordion-box:hover > i {
+  transform: rotate(45deg);
+}
+
+.accordion-meme {
+  margin-top: 1.25rem;
+  height: 0;
+  overflow: hidden;
+  align-self: center;
+}
+
+.accordion-image {
+  width: 25vw;
+  transition: transform 0.5s;
+  transform: scale(0);
+}
+
+.accordion-box:hover > .accordion-meme,
+.accordion-input:checked ~ .accordion-box>.accordion-meme {
+  height: unset;
+  overflow: visible;
+}
+
+.accordion-box:hover .accordion-image,
+.accordion-input:checked ~ .accordion-box .accordion-image {
+  transform: scale(1);
+}
+
+@media (hover: none) {
+  .accordion .plus {
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+@media (width <= 820px) {
+  .title {
+    font-size: 2.25rem;
+  }
+    .accordion-box {
+      font-size: 1.5rem;
+ }
+}
+
+@media (width <= 650px) {
+  .title {
+    font-size: 1.5rem;
+  }
+    .accordion-box {
+      font-size: 1rem;
+      padding-bottom: 0;
+ }
+}
+
+@media (width <= 320px) {
+  .title {
+    font-size: 1.375rem;
+  }
+    .accordion-box {
+      font-size: 0.875rem;
+      padding-bottom: 0;
+ }
+}
