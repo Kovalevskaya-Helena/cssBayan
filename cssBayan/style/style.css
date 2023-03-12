@@ -9,6 +9,11 @@ body {
 
 }
 
+.accordion  * {
+  cursor: pointer;
+}
+
+
 .title {
   font-family: 'Comic Neue', cursive;
   font-size: 40px;
@@ -18,33 +23,56 @@ body {
 }
 
 .accordion-item {
-  position: relative;
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
 }
 
-.accordion-title {
+.accordion-box {
   font-family: 'Comic Neue', cursive;
   font-size: 36px;
   padding-bottom: 10px;
   border-bottom: 2px solid gray;
   display: flex;
+  flex-direction: column;
+}
+.accordion-title {
+  display: flex;
   justify-content: space-between;
 }
 
-.accordion-title:hover ~ .accordion-meme {
-  height: unset;
-  overflow: visible;
+.accordion-box:hover i {
+  transform: rotate(45deg);
 }
 .accordion-input {
   display: none;
 }
 
-.accordion-input:checked ~ .accordion-meme {
-  height: unset;
-  overflow: visible;
+.accordion-input:checked ~ .accordion-box i {
+  transform: rotate(45deg);
 }
+
+.accordion-input:checked ~ .accordion-box>.accordion-title {
+  color: black;
+}
+
+.accordion .plus {
+  display: none;
+}
+
+.accordion:hover .accordion-title {
+  color: brown;
+  transition: color 0.5s ease-in-out;
+  }
+
+.accordion:hover .plus {
+  display: block;
+}
+
+.accordion-box:hover > i {
+  transform: rotate(45deg);
+}
+
 
 .accordion-meme {
   margin-top: 20px;
@@ -55,5 +83,20 @@ body {
 
 .accordion-image {
   width: 25vw;
+  transition: transform 0.5s;
+  transform: scale(0);
 }
 
+
+.accordion-box:hover > .accordion-meme,
+.accordion-input:checked ~ .accordion-box>.accordion-meme {
+  height: unset;
+  overflow: visible;
+}
+
+
+
+.accordion-box:hover .accordion-image,
+.accordion-input:checked ~ .accordion-box .accordion-image {
+  transform: scale(1);
+}
