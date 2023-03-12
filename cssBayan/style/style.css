@@ -57,7 +57,8 @@ body {
 }
 
 .accordion .plus {
-  display: none;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
 }
 
 .accordion:hover .accordion-title {
@@ -66,7 +67,8 @@ body {
   }
 
 .accordion:hover .plus {
-  display: block;
+  opacity: 1;
+  transition: all 1s ease-in-out;
 }
 
 .accordion-box:hover > i {
@@ -94,9 +96,14 @@ body {
   overflow: visible;
 }
 
-
-
 .accordion-box:hover .accordion-image,
 .accordion-input:checked ~ .accordion-box .accordion-image {
   transform: scale(1);
+}
+
+@media (hover: none) {
+  .accordion .plus {
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+  }
 }
