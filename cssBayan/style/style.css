@@ -1,41 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
 body {
   background-color: bisque;
 }
 
 .container {
   width: 50vw;
-  margin: 20px auto;
-
+  margin: 0.625rem auto;
 }
 
 .accordion  * {
   cursor: pointer;
 }
 
-
 .title {
   font-family: 'Comic Neue', cursive;
-  font-size: 40px;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-  border-bottom: 2px solid gray;
+  font-size: 2.5rem;
+  padding-bottom: 0.625rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 0.125rem solid gray;
 }
 
 .accordion-item {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 .accordion-box {
   font-family: 'Comic Neue', cursive;
-  font-size: 36px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid gray;
+  font-size: 2.25rem;
+  padding-bottom: 0.625rem;
+  border-bottom: 0.125rem solid gray;
   display: flex;
   flex-direction: column;
 }
+
 .accordion-title {
   display: flex;
   justify-content: space-between;
@@ -44,6 +44,7 @@ body {
 .accordion-box:hover i {
   transform: rotate(45deg);
 }
+
 .accordion-input {
   display: none;
 }
@@ -64,7 +65,7 @@ body {
 .accordion:hover .accordion-title {
   color: brown;
   transition: color 0.5s ease-in-out;
-  }
+}
 
 .accordion:hover .plus {
   opacity: 1;
@@ -75,9 +76,8 @@ body {
   transform: rotate(45deg);
 }
 
-
 .accordion-meme {
-  margin-top: 20px;
+  margin-top: 1.25rem;
   height: 0;
   overflow: hidden;
   align-self: center;
@@ -88,7 +88,6 @@ body {
   transition: transform 0.5s;
   transform: scale(0);
 }
-
 
 .accordion-box:hover > .accordion-meme,
 .accordion-input:checked ~ .accordion-box>.accordion-meme {
@@ -108,21 +107,31 @@ body {
   }
 }
 
-@media (width <= 1200px) {
+@media (width <= 820px) {
   .title {
-    font-size: 36px;
+    font-size: 2.25rem;
   }
     .accordion-box {
-      font-size: 24px;
+      font-size: 1.5rem;
  }
 }
 
 @media (width <= 650px) {
   .title {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
     .accordion-box {
-      font-size: 16px;
-      padding-bottom: 0px;
+      font-size: 1rem;
+      padding-bottom: 0;
+ }
+}
+
+@media (width <= 320px) {
+  .title {
+    font-size: 1.375rem;
+  }
+    .accordion-box {
+      font-size: 0.875rem;
+      padding-bottom: 0;
  }
 }
