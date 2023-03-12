@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+body {
+  background-color: bisque;
+}
+
+.container {
+  width: 50vw;
+  margin: 20px auto;
+
+}
+
+.title {
+  font-family: 'Comic Neue', cursive;
+  font-size: 40px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid gray;
+}
+
+.accordion-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.accordion-title {
+  font-family: 'Comic Neue', cursive;
+  font-size: 36px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid gray;
+  display: flex;
+  justify-content: space-between;
+}
+
+.accordion-title:hover ~ .accordion-meme {
+  height: unset;
+  overflow: visible;
+}
+.accordion-input {
+  display: none;
+}
+
+.accordion-input:checked ~ .accordion-meme {
+  height: unset;
+  overflow: visible;
+}
+
+.accordion-meme {
+  margin-top: 20px;
+  height: 0;
+  overflow: hidden;
+  align-self: center;
+}
+
+.accordion-image {
+  width: 25vw;
+}
+
